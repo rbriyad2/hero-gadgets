@@ -1,7 +1,9 @@
 import React from 'react'
 
-const CartItem = ({ product }) => {
+const CartItem = ({ product, handleRemoveItem }) => {
   const { id, name, price, quantity, picture } = product
+
+
   return (
     <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>
       <div className='flex w-full space-x-2 sm:space-x-4'>
@@ -27,7 +29,7 @@ const CartItem = ({ product }) => {
           </div>
           <div className='flex text-sm divide-x'>
             <button
-              onClick={() => alert('Item Removed')}
+              onClick={()=>handleRemoveItem(id)}
               type='button'
               className='flex items-center px-2 py-1 pl-0 space-x-1'
             >
@@ -42,7 +44,7 @@ const CartItem = ({ product }) => {
                 <rect width='32' height='200' x='312' y='216'></rect>
                 <path d='M328,88V40c0-13.458-9.488-24-21.6-24H205.6C193.488,16,184,26.542,184,40V88H64v32H448V88ZM216,48h80V88H216Z'></path>
               </svg>
-              <span>Remove</span>
+              <span >Remove</span>
             </button>
           </div>
         </div>
